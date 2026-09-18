@@ -14,6 +14,18 @@ The objective of this laboratory activity is to demonstrate fundamental data man
 
 ---
 
+## Where to Do This Activity
+
+This laboratory activity should be written, executed, and documented in a Jupyter Notebook (.ipynb). You can set up and run your environment using any of the following options:
+
+1. Local Setup (Recommended)
+Anaconda Navigator: Open Anaconda Navigator and launch Jupyter Notebook or JupyterLab.
+
+VS Code: Install the Python and Jupyter extensions in Visual Studio Code, then create a new file named Experiment_4.ipynb.
+
+2. Cloud-Based Platform
+Google Colab: Go to colab.research.google.com, create a new notebook, and upload the cars.csv file into the session storage before executing your code.
+
 ## Laboratory Setup & Prerequisites
 
 Before running the code in your Jupyter Notebook, ensure you have the required environment set up:
@@ -22,10 +34,7 @@ Before running the code in your Jupyter Notebook, ensure you have the required e
 - **Required Libraries**: `pandas`
 - **File Structure**: Keep `cars.csv` in the same directory as your Jupyter Notebook file (`.ipynb`).
 
-```bash
-# Installation (if Pandas is not installed)
-pip install pandas
-
+```
 import pandas as pd
 
 # Load the dataset
