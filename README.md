@@ -1,8 +1,7 @@
 # ECE2112_PA3
-EXPERIMENT 3: PYTHON DATA ANALYSIS (PANDAS)
 
 FLORENCE MIGUEL S. ARAGA | 2ECE-A
-# Pandas Data Wrangling: Subsetting, Indexing, and Filtering
+# EXPERIMENT 3: PYTHON DATA ANALYSIS (PANDAS)
 
 ## Objective
 
@@ -26,3 +25,30 @@ Before running the code in your Jupyter Notebook, ensure you have the required e
 ```bash
 # Installation (if Pandas is not installed)
 pip install pandas
+
+import pandas as pd
+
+# Load the dataset
+cars = pd.read_csv('cars.csv')
+
+Part A: Positional and Label-Based Slicing
+Discussion
+Positional slicing using .iloc allows access to elements by their zero-based integer index. When selecting "rows 6 through 10, where the first data row is row 1", we are targeting 1-based row numbers 6 to 10. In 0-based Python indexing, these correspond to indices 5 through 9. Using Python's slice notation [start:stop], the range 5:10 includes indices 5, 6, 7, 8, and 9.
+
+Label-based selection retrieves columns explicitly by name, ensuring the selected data maintains a precise, deterministic structure regardless of underlying column positions.
+
+# a. Display shape and column names
+print("Dataset Shape:", cars.shape)
+print("\nColumn Names:")
+print(cars.columns.tolist())
+
+# b. Positional slicing for 1-based rows 6 to 10 using iloc
+# (1-based rows 6-10 correspond to 0-based index range 5:10)
+cars_6_to_10 = cars.iloc
+
+# c. Display specified columns using label selection
+selected_columns = ['Model', 'mpg', 'cyl', 'hp', 'gear']
+cars_6_to_10_subset = cars_6_to_10[selected_columns]
+
+# Display result
+cars_6_to_10_subset
