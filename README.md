@@ -46,7 +46,7 @@ Import Pandas and load the dataset into a DataFrame called `cars`:
 ```
 import pandas as pd
 
-`# Load the dataset`
+# Load the dataset
 cars = pd.read_csv('cars.csv')
 ```
 
@@ -59,7 +59,7 @@ Positional slicing using .iloc allows access to elements by their zero-based int
 Label-based selection retrieves columns explicitly by name, ensuring the selected data maintains a precise, deterministic structure regardless of underlying column positions.
 
 ```
-`# a. Display shape and column names`
+# a. Display shape and column names
 print("Dataset Shape:", cars.shape)
 print("\nColumn Names:")
 print(cars.columns.tolist())
