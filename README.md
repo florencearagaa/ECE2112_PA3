@@ -57,3 +57,48 @@ cars_6_to_10_subset = cars_6_to_10[selected_columns]
 # Display result
 cars_6_to_10_subset
 ```
+## Part B: Model Lookup
+
+Discussion
+
+Hard-coding row numbers (e.g., assuming "Toyota Corolla" is at row 20) makes data pipelines fragile and prone to breaking when datasets are updated, re-ordered, or appended. Boolean indexing evaluates a conditional logic statement against a DataFrame column, returning a boolean mask (True/False).
+
+By passing this mask into the DataFrame using .loc[], Pandas dynamically filters and extracts only matching rows alongside the desired column labels.
+
+```
+# a. Complete row for Toyota Corolla using Boolean indexing
+toyota = cars.loc[cars['Model'] == 'Toyota Corolla']
+
+# b. Selected columns for Pontiac Firebird using Boolean indexing
+pontiac = cars.loc[cars['Model'] == 'Pontiac Firebird', ['Model', 'mpg', 'hp', 'wt']]
+
+# Display results
+print("--- Toyota Corolla ---")
+display(toyota)
+
+print("\n--- Pontiac Firebird ---")
+display(pontiac)
+```
+
+## Part C: Multi-Model Subsetting
+
+Discussion
+
+To filter a DataFrame across multiple categorical values without writing long chain operations with | (OR operators), Pandas provides the .isin() method. It evaluates whether each element in a column matches any value within a given list. Combining .isin() with .loc[] allows simultaneous dynamic row filtering and explicit column selection.
+
+```
+# Define target models and columns
+target_models = ['Datsun 710', 'Lotus Europa', 'Ferrari Dino']
+target_cols = ['Model', 'mpg', 'cyl', 'hp', 'gear']
+
+# Filter rows by model values and select required columns
+selected_cars = cars.loc[cars['Model'].isin(target_models), target_cols]
+
+# Display selected DataFrame and its dimensions
+display(selected_cars)
+print("Shape of selected_cars:", selected_cars.shape)
+
+# Required assertion check
+assert selected_cars.shape == (3, 5), "Error: Shape must be exactly 3 rows and 5 columns."
+print("Validation Successful: Shape is exactly (3, 5).")
+```
