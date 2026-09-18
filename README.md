@@ -28,13 +28,14 @@ pip install pandas
 
 import pandas as pd
 
-```
-
 # Load the dataset
 cars = pd.read_csv('cars.csv')
+```
 
-Part A: Positional and Label-Based Slicing
+## Part A: Positional and Label-Based Slicing
+
 Discussion
+
 Positional slicing using .iloc allows access to elements by their zero-based integer index. When selecting "rows 6 through 10, where the first data row is row 1", we are targeting 1-based row numbers 6 to 10. In 0-based Python indexing, these correspond to indices 5 through 9. Using Python's slice notation [start:stop], the range 5:10 includes indices 5, 6, 7, 8, and 9.
 
 Label-based selection retrieves columns explicitly by name, ensuring the selected data maintains a precise, deterministic structure regardless of underlying column positions.
